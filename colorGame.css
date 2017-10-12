@@ -3,33 +3,29 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*border: 2px solid blue;*/
 }
 
 .container {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(19, 32px);
-    grid-template-rows: 30px;
-    /*grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;*/
-    border-collapse: collapse;
-    justify-content: center;
-    text-align: center;
-    /*border: 2px solid red;*/
-    /*grid-template-columns: 1fr;*/
+  margin-top: 5vh;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(19, 32px);
+  grid-template-rows: 30px;
+  /*border-collapse: collapse;*/
+  justify-content: center;
 }
 
 .box {
-    border: 1.5px solid black;
-    margin-right: -1.5px;
-    margin-bottom: -1.5px;
-    width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border: 1.5px solid black;
+  margin-right: -1.5px;
+  margin-bottom: -1.5px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* reset blue outline */
 .box:focus {
-    outline-width: 0;
+  outline-width: 0;
 }

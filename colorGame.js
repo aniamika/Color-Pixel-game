@@ -8,17 +8,17 @@ var violetDivs = document.querySelectorAll('.violet[contenteditable]');
 var blueDivs = document.querySelectorAll('.blue[contenteditable]');
 var lighgrayDivs = document.querySelectorAll('.lightgray[contenteditable]');
 
-// // change color of innerText when the box is clicked
-// for ( var i = 0; i < boxes.length; i++ ) {
-//   boxes[i].addEventListener("click", function() {
-//     this.style.color = 'gray';
-//   });
-//   boxes[i].addEventListener("blur", function() {
-//     this.style.color = 'black';
-//   });
-// }
+// change color of innerText when the box is clicked
+for ( var i = 0; i < boxes.length; i++ ) {
+  boxes[i].addEventListener("click", function() {
+    this.style.color = 'gray';
+  });
+  boxes[i].addEventListener("blur", function() {
+    this.style.color = 'black';
+  });
+}
 
-// RED//
+// RED //
 for ( var i = 0; i < redDivs.length; i++ ) {
   redDivs[i].addEventListener("keyup", function() {
     if ( this.innerHTML == 0 ) {
@@ -31,11 +31,12 @@ for ( var i = 0; i < redDivs.length; i++ ) {
 for ( var i = 0; i < redDivs.length; i++ ) {
   redDivs[i].addEventListener("keypress", function(event) {
     const keyName = event.key;
-    this.innerText = '';
-    if ( keyName != 0 ) {
-    // block possibility to tap the wrong answer
-    event.preventDefault();
-    return false;
+    if ( keyName == 0 ) {
+      this.innerText = '';
+    } else {
+      // block possibility to tap the wrong answer
+      event.preventDefault();
+      return false;
     }
   });
 }
@@ -54,11 +55,12 @@ for ( var i = 0; i < creamyDivs.length; i++ ) {
 for ( var i = 0; i < creamyDivs.length; i++ ) {
   creamyDivs[i].addEventListener("keypress", function(event) {
     const keyName = event.key;
-    this.innerText = '';
-    if ( keyName != 1 ) {
-    // block possibility to tap the wrong answer
-    event.preventDefault();
-    return false;
+    if ( keyName == 1 ) {
+      this.innerText = '';
+    } else {
+      // block possibility to tap the wrong answer
+      event.preventDefault();
+      return false;
     }
   });
 }
@@ -77,11 +79,12 @@ for ( var i = 0; i < darkgrayDivs.length; i++ ) {
 for ( var i = 0; i < darkgrayDivs.length; i++ ) {
   darkgrayDivs[i].addEventListener("keypress", function(event) {
     const keyName = event.key;
-    this.innerText = '';
-    if ( keyName != 2 ) {
-    // block possibility to tap the wrong answer
-    event.preventDefault();
-    return false;
+    if ( keyName == 2 ) {
+      this.innerText = '';
+    } else {
+      // block possibility to tap the wrong answer
+      event.preventDefault();
+      return false;
     }
   });
 }
@@ -100,14 +103,16 @@ for ( var i = 0; i < greenDivs.length; i++ ) {
 for ( var i = 0; i < greenDivs.length; i++ ) {
   greenDivs[i].addEventListener("keypress", function(event) {
     const keyName = event.key;
-    this.innerText = '';
-    if ( keyName != 3 ) {
-    // block possibility to tap the wrong answer
-    event.preventDefault();
-    return false;
+    if ( keyName == 3 ) {
+      this.innerText = '';
+    } else {
+      // block possibility to tap the wrong answer
+      event.preventDefault();
+      return false;
     }
   });
 }
+
 
 // VIOLET //
 for ( var i = 0; i < violetDivs.length; i++ ) {
@@ -122,11 +127,12 @@ for ( var i = 0; i < violetDivs.length; i++ ) {
 for ( var i = 0; i < violetDivs.length; i++ ) {
   violetDivs[i].addEventListener("keypress", function(event) {
     const keyName = event.key;
-    this.innerText = '';
-    if ( keyName != 4 ) {
-    // block possibility to tap the wrong answer
-    event.preventDefault();
-    return false;
+    if ( keyName == 4 ) {
+      this.innerText = '';
+    } else {
+      // block possibility to tap the wrong answer
+      event.preventDefault();
+      return false;
     }
   });
 }
@@ -145,16 +151,14 @@ for ( var i = 0; i < blueDivs.length; i++ ) {
 for ( var i = 0; i < blueDivs.length; i++ ) {
   blueDivs[i].addEventListener("keypress", function(event) {
     const keyName = event.key;
-
     if ( keyName == 5 ) {
-    this.innerText = '';
-  } else {
-    // block possibility to tap the wrong answer
-    event.preventDefault();
-    return false;
+      this.innerText = '';
+    } else {
+      // block possibility to tap the wrong answer
+      event.preventDefault();
+      return false;
     }
   });
-  
 }
 
 
@@ -171,11 +175,12 @@ for ( var i = 0; i < lighgrayDivs.length; i++ ) {
 for ( var i = 0; i < lighgrayDivs.length; i++ ) {
   lighgrayDivs[i].addEventListener("keypress", function(event) {
     const keyName = event.key;
-    this.innerText = '';
-    if ( keyName != 6 ) {
-    // block possibility to tap the wrong answer
-    event.preventDefault();
-    return false;
+    if ( keyName == 6 ) {
+      this.innerText = '';
+    } else {
+      // block possibility to tap the wrong answer
+      event.preventDefault();
+      return false;
     }
   });
 }
