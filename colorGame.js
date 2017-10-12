@@ -1,161 +1,181 @@
-// array with all colors to use in textContent
-var colors = [
-    "rgb(46, 42, 41)",
-    "rgb(3, 173, 85)",
-    "rgb(250, 3, 12)",
-    "rgb(162, 165, 170)",
-    "rgb(24, 177, 237)",
-    "rgb(252, 198, 151)",
-    "rgb(104, 48, 157)"
-]
 
-// variables with elements needs to the rest of the code
-var squares = document.querySelectorAll('.square');
-var colorDisplay = document.getElementById('colorDisplay');
-var messageDisplay = document.querySelector("#message");
-var box = document.querySelectorAll('.box');
-var red = document.querySelectorAll('.red');
-var green = document.querySelectorAll('.green');
-var blue = document.querySelectorAll('.blue');
-var creamy = document.querySelectorAll('.creamy');
-var lightgray = document.querySelectorAll('.lightgray');
-var darkgray = document.querySelectorAll('.darkgray');
-var violet = document.querySelectorAll('.violet');
-// variable for the scores
-var score = 0;
-//var resetButton = document.querySelector('#reset');
+var boxes = document.querySelectorAll('.box');
+var redDivs = document.querySelectorAll('.red[contenteditable]');
+var creamyDivs = document.querySelectorAll('.creamy[contenteditable]');
+var darkgrayDivs = document.querySelectorAll('.darkgray[contenteditable]');
+var greenDivs = document.querySelectorAll('.green[contenteditable]');
+var violetDivs = document.querySelectorAll('.violet[contenteditable]');
+var blueDivs = document.querySelectorAll('.blue[contenteditable]');
+var lighgrayDivs = document.querySelectorAll('.lightgray[contenteditable]');
 
+// // change color of innerText when the box is clicked
+// for ( var i = 0; i < boxes.length; i++ ) {
+//   boxes[i].addEventListener("click", function() {
+//     this.style.color = 'gray';
+//   });
+//   boxes[i].addEventListener("blur", function() {
+//     this.style.color = 'black';
+//   });
+// }
 
-// looping throught squares
-for(var i = 0; i < squares.length; i++) {
-  colorDisplay.textContent = colors[0];
-  // add click listeners to squares
-  squares[i].addEventListener('click', function() {
-      
-// DARKGRAY
-    // compare color to pickedColor
-    if ( this.classList.contains('darkgray') && colorDisplay.textContent == colors[0] )  {
-      messageDisplay.textContent = 'CORRECT';
-      // correct square is dissapear
-      this.style.display = 'none';
-      // add score
-      score = score + 1;
-      console.log('score = ' + score)  
-      
-      // colorize darkgray pixels on the image
-      for(var i = 0; i < darkgray.length; i++) {
-        darkgray[i].style.background = "rgb(46, 42, 41)";
-      }
-
-      // podmiana napisu choose rgb colors na nowy
-      colorDisplay.textContent = colors[1];
-      // podmiana kwadratów na nowe kolory
-      squares[0].style.display = 'block';  
-      squares[1].style.display = 'block';  
-      squares[2].style.display = 'block';  
-      squares[3].style.display = 'block';  
-      squares[5].style.display = 'block';  
-      squares[6].style.display = 'block';  
-
-// GREEN        
-    } else if ( this.classList.contains('green') && colorDisplay.textContent == colors[1] )  {
-    messageDisplay.textContent = 'CORRECT';
-    this.style.display = 'none';
-    score = score + 1;
-    console.log('score = ' + score)  
-    
-    for(var i = 0; i < green.length; i++) {
-      green[i].style.background = "rgb(3, 173, 85)";
+// RED//
+for ( var i = 0; i < redDivs.length; i++ ) {
+  redDivs[i].addEventListener("keyup", function() {
+    if ( this.innerHTML == 0 ) {
+      this.style.background = "rgb(250, 3, 12)";
+      this.innerText = '';
     }
+  })
+}
 
-    colorDisplay.textContent = colors[2];
-    squares[0].style.display = 'block';  
-    squares[1].style.display = 'block';  
-    squares[2].style.display = 'block';  
-    squares[3].style.display = 'block';  
-    squares[6].style.display = 'block';  
-        
-// RED      
-    } else if ( this.classList.contains('red') && colorDisplay.textContent == colors[2] )  {
-    messageDisplay.textContent = 'CORRECT';
-    this.style.display = 'none';
-    score = score + 1;
-    console.log('score = ' + score)  
-    
-    for(var i = 0; i < red.length; i++) {
-      red[i].style.background = "rgb(250, 3, 12)";
+for ( var i = 0; i < redDivs.length; i++ ) {
+  redDivs[i].addEventListener("keypress", function(event) {
+    const keyName = event.key;
+    this.innerText = '';
+    if ( keyName != 0 ) {
+    // block possibility to tap the wrong answer
+    event.preventDefault();
+    return false;
     }
+  });
+}
 
-    colorDisplay.textContent = colors[3];
-    squares[0].style.display = 'block';  
-    squares[1].style.display = 'block';  
-    squares[2].style.display = 'block';  
-    squares[3].style.display = 'block';  
+
+// CREAMY //
+for ( var i = 0; i < creamyDivs.length; i++ ) {
+  creamyDivs[i].addEventListener("keyup", function() {
+    if ( this.innerText == 1 ) {
+      this.style.background = "rgb(252, 198, 151)";
+      this.innerText = '';
+    }
+  })
+}
+
+for ( var i = 0; i < creamyDivs.length; i++ ) {
+  creamyDivs[i].addEventListener("keypress", function(event) {
+    const keyName = event.key;
+    this.innerText = '';
+    if ( keyName != 1 ) {
+    // block possibility to tap the wrong answer
+    event.preventDefault();
+    return false;
+    }
+  });
+}
+
+
+// DARKGRAY //
+for ( var i = 0; i < darkgrayDivs.length; i++ ) {
+  darkgrayDivs[i].addEventListener("keyup", function() {
+    if ( this.innerText == 2 ) {
+      this.style.background = "rgb(46, 42, 41)";
+      this.innerText = '';
+    }
+  })
+}
+
+for ( var i = 0; i < darkgrayDivs.length; i++ ) {
+  darkgrayDivs[i].addEventListener("keypress", function(event) {
+    const keyName = event.key;
+    this.innerText = '';
+    if ( keyName != 2 ) {
+    // block possibility to tap the wrong answer
+    event.preventDefault();
+    return false;
+    }
+  });
+}
+
+
+// GREEN //
+for ( var i = 0; i < greenDivs.length; i++ ) {
+    greenDivs[i].addEventListener("keyup", function() {
+        if ( this.innerText == 3 ) {
+            this.style.background = "rgb(3, 173, 85)";
+            this.innerText = '';
+        }
+    })
+}
+
+for ( var i = 0; i < greenDivs.length; i++ ) {
+  greenDivs[i].addEventListener("keypress", function(event) {
+    const keyName = event.key;
+    this.innerText = '';
+    if ( keyName != 3 ) {
+    // block possibility to tap the wrong answer
+    event.preventDefault();
+    return false;
+    }
+  });
+}
+
+// VIOLET //
+for ( var i = 0; i < violetDivs.length; i++ ) {
+  violetDivs[i].addEventListener("keyup", function() {
+    if ( this.innerText == 4 ) {
+      this.style.background = "rgb(104, 48, 157)";
+      this.innerText = '';
+    }
+  })
+}
+
+for ( var i = 0; i < violetDivs.length; i++ ) {
+  violetDivs[i].addEventListener("keypress", function(event) {
+    const keyName = event.key;
+    this.innerText = '';
+    if ( keyName != 4 ) {
+    // block possibility to tap the wrong answer
+    event.preventDefault();
+    return false;
+    }
+  });
+}
+
+
+// BLUE //
+for ( var i = 0; i < blueDivs.length; i++ ) {
+  blueDivs[i].addEventListener("keyup", function(event) {
+    if ( this.innerText == 5 ) {
+        this.style.background = "rgb(24, 177, 237)";
+        this.innerText = '';
+    }
+  });
+}
+
+for ( var i = 0; i < blueDivs.length; i++ ) {
+  blueDivs[i].addEventListener("keypress", function(event) {
+    const keyName = event.key;
+
+    if ( keyName == 5 ) {
+    this.innerText = '';
+  } else {
+    // block possibility to tap the wrong answer
+    event.preventDefault();
+    return false;
+    }
+  });
   
-// LIGHTGRAY      
-    } else if ( this.classList.contains('lightgray') && colorDisplay.textContent == colors[3] )  {
-    messageDisplay.textContent = 'CORRECT';
-    this.style.display = 'none';
-    score = score + 1;
-    console.log('score = ' + score)  
-    
-    for(var i = 0; i < lightgray.length; i++) {
-      lightgray[i].style.background = "rgb(162, 165, 170)";
-    }
+}
 
-    colorDisplay.textContent = colors[4];
-    squares[0].style.display = 'block';  
-    squares[2].style.display = 'block';  
-    squares[3].style.display = 'block';  
-        
-// BLUE      
-    } else if ( this.classList.contains('blue') && colorDisplay.textContent == colors[4] )  {
-    messageDisplay.textContent = 'CORRECT';
-    this.style.display = 'none';
-    score = score + 1;
-    console.log('score = ' + score)  
-    
-    for(var i = 0; i < blue.length; i++) {
-      blue[i].style.background = "rgb(24, 177, 237)";
-    }
 
-    colorDisplay.textContent = colors[5];
-    squares[2].style.display = 'block';  
-    squares[3].style.display = 'block'; 
-        
-
- // CREAMY      
-    } else if ( this.classList.contains('creamy') && colorDisplay.textContent == colors[5] )  {
-    messageDisplay.textContent = 'CORRECT';
-    this.style.display = 'none';
-    score = score + 1;
-    console.log('score = ' + score)  
-    
-    for(var i = 0; i < creamy.length; i++) {
-      creamy[i].style.background = "rgb(252, 198, 151)";
+// LIGHTGRAY //
+for ( var i = 0; i < lighgrayDivs.length; i++ ) {
+  lighgrayDivs[i].addEventListener("keyup", function() {
+    if ( this.innerText == 6 ) {
+      this.style.background = "rgb(162, 165, 170)";
+      this.innerText = '';
     }
+  })
+}
 
-    colorDisplay.textContent = colors[6];
-    squares[2].style.display = 'block';
-        
-  
- // VIOLET     
-    } else if ( this.classList.contains('violet') && colorDisplay.textContent == colors[6] )  {
-    messageDisplay.textContent = 'YOU WIN!';
-    this.style.display = 'none';
-    score = score + 1;
-    console.log('score = ' + score)  
-    
-    for(var i = 0; i < violet.length; i++) {
-      violet[i].style.background = "rgb(104, 48, 157)";
+for ( var i = 0; i < lighgrayDivs.length; i++ ) {
+  lighgrayDivs[i].addEventListener("keypress", function(event) {
+    const keyName = event.key;
+    this.innerText = '';
+    if ( keyName != 6 ) {
+    // block possibility to tap the wrong answer
+    event.preventDefault();
+    return false;
     }
-    
-        
-    } else {
-      this.style.display = 'none';
-      messageDisplay.textContent = 'TRY AGAIN';
-    }     
-      
-      
-  });  
+  });
 }

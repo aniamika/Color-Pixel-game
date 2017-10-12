@@ -1,99 +1,35 @@
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-/*    border: 4px solid pink;*/
+    /*border: 2px solid blue;*/
 }
 
 .container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(19, 32px);
-  grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;
-/*  grid-auto-flow: column;*/
-/*  border: 2px solid green;  */
-  justify-content: center;	
-  border-collapse: collapse;
-  align-content: center;	
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(19, 32px);
+    grid-template-rows: 30px;
+    /*grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;*/
+    border-collapse: collapse;
+    justify-content: center;
+    text-align: center;
+    /*border: 2px solid red;*/
+    /*grid-template-columns: 1fr;*/
 }
 
 .box {
-    display:inline-block;  
     border: 1.5px solid black;
     margin-right: -1.5px;
     margin-bottom: -1.5px;
-    min-width: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#container1 {
-/*  border: 2px solid red;*/
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-/*  flex-wrap: wrap;*/
-  align-content: center;
-  justify-content: center;
-}
-
-#container2 {
-/*  border: 2px solid blue;*/
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-/*  flex-wrap: wrap;*/
-  align-content: center;
-  justify-content: center;
-}
-
-.square {
-  height: 60px;
-  min-width: 60px;
-  margin: 10px;
-/*  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.19);*/
-  border: 1.5px solid black;
-}
-
-h1 {
-  color: black;
-}
-
-span {
-  color: black;
-}
-
-#stripe {
-  margin-top: 2%;
-  background: white;
-  height: 30px;
-  text-align: center;
-}
-
-.square.blue {
-  background: rgb(24, 177, 237);
-}
-
-.square.lightgray {
-  background: rgb(162, 165, 170);
-}
-
-.square.violet {
-  background: rgb(104, 48, 157);
-}
-
-.square.creamy {
-  background: rgb(252, 198, 151);   
-}
-
-.square.darkgray {
-  background: rgb(46, 42, 41);
-}
-
-.square.green {
-  background: rgb(3, 173, 85);
-}
-
-.square.red {
-  background: rgb(250, 3, 12);
+/* reset blue outline */
+.box:focus {
+    outline-width: 0;
 }
